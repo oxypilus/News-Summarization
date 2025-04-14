@@ -1,0 +1,30 @@
+{% extends "base.html" %} 
+
+{% block content %}
+<section>
+    <h2>News Summarization</h2>
+    Сервис для сокращения размера любой новостной статьи  в 2 раза.<p>
+    Для демонстраций работы можно загрузить статьи, которые ранее уже были обработаны и поэтому не требуют ожидания выполнения запроса.<p>
+
+    <a href="{{ url_for('example_result') }}">Демонстрация работы</a>
+    <form id = "translationForm" action = "/" method = "post">
+        <div class = "mb-3">
+            <label for = "textTo" class = "form-label">Текст новости:</label>
+            <textarea id = "textTo" class= "form-control" rows="4" name="textTo"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <button onclick="Func('loadText')" type="submit" class="btn btn-primary">Сократить</button>
+            <div id = "loadText"> </div>
+            <script>
+                function Func(textid) {
+                    var el = document.getElementById(textid);
+                    el.firstChild.data = "Запрос обрабатывается...";
+                }
+            </script>
+            
+        </div>
+    </form>
+</section>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %} 
+
+{% block content %}
+<h2>Translate Text</h2>
+<div style = "white-space: normal; width: 70%;">
+    <h3>Исходный текст:</h3>
+    <p>{{ origin_text }} </p>
+</div>
+
+<div style = "white-space: normal; width: 70%;">
+<h2>Результат</h2>
+<p id="translatedText">{{ result_text }}</p>
+</div>
+{% endblock %}
